@@ -1,0 +1,43 @@
+{
+  "source_repository": "https://github.com/msitarzewski/agency-agents",
+  "revision": "b37b5bb33b78f2c1d6567d98e25ca818e3259219",
+  "reviewed_on": "2026-10-26",
+  "profiles": [
+    {
+      "file": "agents/atlas.toml",
+      "source_path": "engineering/engineering-software-architect.md",
+      "source_url": "https://github.com/msitarzewski/agency-agents/blob/b37b5bb33b78f2c1d6567d98e25ca818e3259219/engineering/engineering-software-architect.md",
+      "adaptation": "Condensed Portuguese adaptation; not a verbatim translation."
+    },
+    {
+      "file": "agents/luna.toml",
+      "source_path": "engineering/engineering-frontend-developer.md",
+      "source_url": "https://github.com/msitarzewski/agency-agents/blob/b37b5bb33b78f2c1d6567d98e25ca818e3259219/engineering/engineering-frontend-developer.md",
+      "adaptation": "Condensed Portuguese adaptation; not a verbatim translation."
+    },
+    {
+      "file": "agents/nexo.toml",
+      "source_path": "engineering/engineering-backend-architect.md",
+      "source_url": "https://github.com/msitarzewski/agency-agents/blob/b37b5bb33b78f2c1d6567d98e25ca818e3259219/engineering/engineering-backend-architect.md",
+      "adaptation": "Condensed Portuguese adaptation; not a verbatim translation."
+    },
+    {
+      "file": "agents/iris.toml",
+      "source_path": "engineering/engineering-code-reviewer.md",
+      "source_url": "https://github.com/msitarzewski/agency-agents/blob/b37b5bb33b78f2c1d6567d98e25ca818e3259219/engineering/engineering-code-reviewer.md",
+      "adaptation": "Condensed Portuguese adaptation; not a verbatim translation."
+    },
+    {
+      "file": "agents/cora.toml",
+      "source_path": "security/security-appsec-engineer.md",
+      "source_url": "https://github.com/msitarzewski/agency-agents/blob/b37b5bb33b78f2c1d6567d98e25ca818e3259219/security/security-appsec-engineer.md",
+      "adaptation": "Condensed Portuguese adaptation; not a verbatim translation."
+    },
+    {
+      "file": "agents/vero.toml",
+      "source_path": "testing/testing-reality-checker.md",
+      "source_url": "https://github.com/msitarzewski/agency-agents/blob/b37b5bb33b78f2c1d6567d98e25ca818e3259219/testing/testing-reality-checker.md",
+      "adaptation": "Condensed Portuguese adaptation; not a verbatim translation."
+    }
+  ]
+}
