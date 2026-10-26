@@ -1,0 +1,21 @@
+{
+  "role": "luna",
+  "version": "candidate",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 21.95,
+  "usage": {
+    "input_tokens": 11966,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 972,
+    "reasoning_output_tokens": 101
+  },
+  "profile_sha256": "67647128c609d50c1dc89c60f1879696842b4195d2820534eae0f7838aad80e2",
+  "task_sha256": "1b7c0052aff804ef2d6eb18c76b97f7c4d0cce79736d98a0959f443e7b8b3d67",
+  "response": {
+    "answer": "Implementei um HTML autocontido com validação de email, envio assíncrono, bloqueio de chamadas duplicadas, mensagens de resultado e nova tentativa preservando o email.",
+    "artifact": "<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Inscrição</title>\n  <style>\n    * { box-sizing: border-box; }\n    body { margin: 0; padding: 16px; font-family: system-ui, sans-serif; color: #172033; background: #f4f6fa; }\n    main { width: 100%; max-width: 420px; margin: 24px auto; padding: 20px; background: white; border: 1px solid #cbd2dc; border-radius: 12px; overflow-wrap: anywhere; }\n    h1 { margin: 0 0 20px; font-size: 1.75rem; }\n    label { display: block; margin-bottom: 8px; font-weight: 600; }\n    input, button { width: 100%; min-width: 0; min-height: 44px; padding: 10px 12px; font: inherit; border-radius: 6px; }\n    input { border: 1px solid #687386; }\n    button { margin-top: 16px; border: 1px solid #1746a2; background: #1746a2; color: white; cursor: pointer; }\n    button:disabled { background: #536079; border-color: #536079; cursor: wait; }\n    input:focus-visible, button:focus-visible { outline: 3px solid #172033; outline-offset: 3px; }\n    #status { min-height: 1.5em; margin: 16px 0 0; line-height: 1.5; }\n  </style>\n</head>\n<body>\n  <main>\n    <h1>Inscrição</h1>\n    <form id=\"subscription-form\">\n      <label for=\"email\">Email (obrigatório)</label>\n      <input type=\"email\" id=\"email\" name=\"email\" autocomplete=\"email\" required>\n      <button type=\"submit\">Inscrever</button>\n    </form>\n    <p id=\"status\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\"></p>\n  </main>\n  <script>\n    (() => {\n      const form = document.getElementById('subscription-form');\n      const input = document.getElementById('email');\n      const button = form.querySelector('button');\n      const status = document.getElementById('status');\n      let pending = false;\n\n      form.addEventListener('submit', async (event) => {\n        event.preventDefault();\n        if (pending || !form.reportValidity()) return;\n\n        const email = input.value;\n        pending = true;\n        button.disabled = true;\n        input.readOnly = true;\n        status.textContent = 'Enviando inscrição…';\n\n        try {\n          await window.subscribe(email);\n          status.textContent = 'Inscrição concluída.';\n        } catch {\n          status.textContent = 'Falha ao inscrever';\n        } finally {\n          pending = false;\n          button.disabled = false;\n          input.readOnly = false;\n        }\n      });\n    })();\n  </script>\n</body>\n</html>",
+    "limitations": "Não foram executados testes em navegador, de teclado ou de layout em 320px. A integração depende de window.subscribe fornecida pelo host."
+  }
+}

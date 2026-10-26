@@ -1,0 +1,21 @@
+{
+  "role": "vero",
+  "version": "baseline",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 27.0,
+  "usage": {
+    "input_tokens": 11536,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1144,
+    "reasoning_output_tokens": 119
+  },
+  "profile_sha256": "ae03f24d0dfc5b1663bf267b8855b29c77d4a1ef4a8dc3bf12dc0faa0196ae31",
+  "task_sha256": "fa8021436c71b85f96ad610c2711ce7789324432dcd5ed01b6b01f7676c3ca09",
+  "response": {
+    "answer": "Os testes cobrem cálculo, limites do cap, tentativa zero, retorno inteiro, zeros, rejeição de tipos inválidos e negativos, além de monotonicidade e tentativas grandes.",
+    "artifact": "import unittest\nfrom retry_policy import retry_delay\n\n\nclass RetryDelayTests(unittest.TestCase):\n    def assert_delay(self, args, expected):\n        result = retry_delay(*args)\n        self.assertIs(type(result), int)\n        self.assertEqual(result, expected)\n\n    def test_calculation_and_cap_boundaries(self):\n        cases = (\n            ((0, 3, 100), 3),\n            ((1, 3, 100), 6),\n            ((2, 3, 100), 12),\n            ((4, 3, 100), 48),\n            ((5, 3, 100), 96),\n            ((6, 3, 100), 100),\n            ((0, 9, 4), 4),\n            ((0, 7, 7), 7),\n            ((3, 5, 39), 39),\n            ((3, 5, 40), 40),\n            ((3, 5, 41), 40),\n            ((0, 1, 1), 1),\n            ((1, 1, 1), 1),\n            ((60, 3, 4000000000000000000), 3458764513820540928),\n        )\n        for args, expected in cases:\n            with self.subTest(args=args):\n                self.assert_delay(args, expected)\n\n    def test_zero_base_or_cap(self):\n        for attempt in (0, 1, 8, 10000):\n            for base, cap in ((0, 0), (0, 17), (17, 0)):\n                args = (attempt, base, cap)\n                with self.subTest(args=args):\n                    self.assert_delay(args, 0)\n\n    def test_large_attempt_saturates(self):\n        for args, expected in (\n            ((10000, 1, 97), 97),\n            ((10000, 7, 1000), 1000),\n            ((10000, 100, 3), 3),\n        ):\n            with self.subTest(args=args):\n                self.assert_delay(args, expected)\n\n    def test_invalid_types_in_every_argument(self):\n        invalid_values = (\n            False, True, None, 0.0, 1.5, '1', 1 + 0j, [], (), {},\n        )\n        # Zero baselines also check validation before zero shortcuts.\n        for baseline in ((2, 3, 17), (0, 0, 0)):\n            for position in range(3):\n                for invalid in invalid_values:\n                    args = list(baseline)\n                    args[position] = invalid\n                    with self.subTest(\n                        baseline=baseline, position=position, invalid=invalid\n                    ):\n                        with self.assertRaises(TypeError):\n                            retry_delay(*args)\n\n    def test_negative_values_in_every_argument(self):\n        for baseline in ((2, 3, 17), (0, 0, 0)):\n            for position in range(3):\n                for negative in (-1, -10000):\n                    args = list(baseline)\n                    args[position] = negative\n                    with self.subTest(args=args):\n                        with self.assertRaises(ValueError):\n                            retry_delay(*args)\n\n    def test_monotonicity_and_persistent_saturation(self):\n        previous = 0\n        saturated = False\n        for attempt in range(20):\n            with self.subTest(attempt=attempt):\n                result = retry_delay(attempt, 3, 100)\n                self.assertIs(type(result), int)\n                self.assertGreaterEqual(result, previous)\n                self.assertLessEqual(result, 100)\n                if saturated:\n                    self.assertEqual(result, 100)\n                saturated = saturated or result == 100\n                previous = result\n        self.assertTrue(saturated)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "limitations": "Testes não executados. O caso attempt=10000 verifica o resultado, mas não impõe limite de tempo nem comprova desempenho."
+  }
+}

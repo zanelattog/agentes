@@ -2,7 +2,7 @@
 
 # AI Agents
 
-Six agents, each with a clear job. I put this selection together to plan, build and review projects in Codex, with short instructions and a simple installer.
+Six agents, each with a clear job. I put this selection together to plan, build and review projects in Codex, with role-specific procedures and a simple installer.
 
 **[↓ Download the agents](https://github.com/zanelattog/agentes/archive/refs/heads/main.zip)** · [Installation](docs/installation.en.md) · [Token usage](docs/tokens.en.md)
 
@@ -56,7 +56,7 @@ Watching the dashboard does not require a new AI response. Working agents still 
 
 ## What to expect
 
-Clear roles help organize implementation and review. More agents can also increase usage: **this selection has no guaranteed savings or performance benchmark**.
+Each profile defines procedures, checks and boundaries. **Paired test: a tie on all six exercises.** Expanded profiles passed the checks, but did not outperform the previous versions in this sample and used 4.04% more tokens. [Results and limitations](docs/evaluation.en.md).
 
 [Understand token usage](docs/tokens.en.md) · [Validation status](docs/evaluation.en.md) · [Original catalog's visual installer](docs/installation.en.md#original-catalog-agency-agents-app)
 

@@ -2,7 +2,7 @@
 
 # Agentes de IA
 
-Seis agentes, cada um com uma função. Organizei esta seleção para planejar, construir e revisar projetos no Codex, com instruções curtas e instalação simples.
+Seis agentes, cada um com uma função. Organizei esta seleção para planejar, construir e revisar projetos no Codex, com procedimentos específicos e instalação simples.
 
 **[↓ Baixar os agentes](https://github.com/zanelattog/agentes/archive/refs/heads/main.zip)** · [Instalação](docs/instalacao.md) · [Tokens](docs/tokens.md)
 
@@ -56,7 +56,7 @@ Observar o painel não exige uma nova resposta de IA. Os agentes continuam consu
 
 ## O que esperar
 
-Papéis claros ajudam a organizar implementação e revisão. Mais agentes também podem aumentar o consumo: **não há economia garantida nem benchmark desta seleção**.
+Cada perfil define como trabalhar, o que verificar e quais limites respeitar. **Teste comparativo: empate nos seis exercícios.** Os perfis ampliados passaram nos critérios, mas não superaram os anteriores nesta amostra e consumiram 4.04% mais tokens. [Resultados e limitações](docs/avaliacao.md).
 
 [Entenda o consumo](docs/tokens.md) · [Veja o que foi testado](docs/avaliacao.md) · [Instalador visual do catálogo original](docs/instalacao.md#catálogo-original-pelo-agency-agents-app)
 

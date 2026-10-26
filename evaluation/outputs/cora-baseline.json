@@ -1,0 +1,21 @@
+{
+  "role": "cora",
+  "version": "baseline",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 16.42,
+  "usage": {
+    "input_tokens": 11695,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 392,
+    "reasoning_output_tokens": 0
+  },
+  "profile_sha256": "e2fc42f18fe07d29e53b1c25dfd064a4d2f52fdd7d445aa054217fb21618b3e3",
+  "task_sha256": "e852b20b5304514261d174516ad99f8a94ea97ea7a6ad63ab2b7974ed1ae4ced",
+  "response": {
+    "answer": "S1 — Evidência: busca exclusivamente por id, sem validar invoice.tenant_id. Pré-condição: usuário autenticado fornece id de outro tenant. Impacto: acesso indevido ao objeto e exposição de seu id no cabeçalho; o arquivo retornado é escolhido separadamente. Correção: restringir a busca ao tenant autorizado e negar acesso antes de usar a invoice.\nS2 — Evidência: no Linux, filename absoluto substitui /srv/uploads em os.path.join; também há possibilidade de ../. Pré-condição: arquivo legível pelo processo. Impacto: leitura de arquivos locais e dados de outros clientes. Correção: usar identificadores de arquivos autorizados por tenant, resolver caminhos e verificar confinamento, incluindo links simbólicos. Testar rejeição de caminhos absolutos, travessia e arquivos de outro tenant.\nS3 — Evidência: session_token é gravado diretamente no log. Pré-condição: acesso ao log e token ainda válido para reutilização. Impacto: exposição de credencial e possível sequestro de sessão. Correção: remover o token dos logs, verificar sua ausência e revogar credenciais expostas.\nS4 e S5 são falsas: o binding descrito impede injeção pelo parâmetro, e label escapado nem sequer é usado na resposta. S6 é falsa: autenticação não comprova conformidade com a LGPD.",
+    "artifact": "{\"S1\":true,\"S2\":true,\"S3\":true,\"S4\":false,\"S5\":false,\"S6\":false}",
+    "limitations": "Triagem estática limitada ao código e às premissas fornecidas. Nenhuma ferramenta, arquivo, ataque ou scan foi utilizado. Não foram validados acesso e retenção dos logs, validade dos tokens ou controles externos; não se atesta conformidade legal nem segurança absoluta."
+  }
+}

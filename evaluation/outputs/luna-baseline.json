@@ -1,0 +1,21 @@
+{
+  "role": "luna",
+  "version": "baseline",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 19.51,
+  "usage": {
+    "input_tokens": 11536,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 830,
+    "reasoning_output_tokens": 65
+  },
+  "profile_sha256": "4cf8dea5c4a7c7bb60fef655326fcdd1ef1d16627b6e20d6598c5134e7c3e1e5",
+  "task_sha256": "1b7c0052aff804ef2d6eb18c76b97f7c4d0cce79736d98a0959f443e7b8b3d67",
+  "response": {
+    "answer": "Implementei o formulário autocontido com validação de email, bloqueio de envios duplicados, mensagens de resultado e nova tentativa após falha.",
+    "artifact": "<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Inscrição</title>\n  <style>\n    * { box-sizing: border-box; }\n    body { margin: 0; padding: 16px; font-family: system-ui, sans-serif; color: #17202a; background: #fff; }\n    main { width: 100%; max-width: 400px; margin: 32px auto; }\n    h1 { font-size: 1.75rem; }\n    form { display: grid; gap: 12px; min-width: 0; }\n    label { font-weight: 600; }\n    input, button { width: 100%; min-width: 0; padding: 12px; font: inherit; border-radius: 4px; }\n    input { border: 1px solid #586574; }\n    button { border: 2px solid #164b83; background: #164b83; color: #fff; cursor: pointer; }\n    button:disabled { background: #465566; border-color: #465566; cursor: wait; }\n    input:focus-visible, button:focus-visible { outline: 3px solid #17202a; outline-offset: 3px; }\n    #status { min-height: 1.5em; margin: 4px 0 0; overflow-wrap: anywhere; }\n  </style>\n</head>\n<body>\n  <main>\n    <h1>Inscrição</h1>\n    <form id=\"subscription-form\">\n      <label for=\"email\">Email</label>\n      <input type=\"email\" id=\"email\" name=\"email\" autocomplete=\"email\" required>\n      <button type=\"submit\">Inscrever</button>\n      <p id=\"status\" role=\"status\" aria-live=\"polite\"></p>\n    </form>\n  </main>\n  <script>\n    (() => {\n      const form = document.getElementById('subscription-form');\n      const email = document.getElementById('email');\n      const button = form.querySelector('button');\n      const status = document.getElementById('status');\n      let pending = false;\n\n      form.addEventListener('submit', async (event) => {\n        event.preventDefault();\n        if (pending || !form.reportValidity()) return;\n\n        pending = true;\n        button.disabled = true;\n        status.textContent = 'Inscrevendo…';\n\n        try {\n          await window.subscribe(email.value);\n          status.textContent = 'Inscrição concluída.';\n        } catch {\n          status.textContent = 'Falha ao inscrever';\n        } finally {\n          pending = false;\n          button.disabled = false;\n        }\n      });\n    })();\n  </script>\n</body>\n</html>",
+    "limitations": "Não validado em navegador: interação, aparência em 320px e acessibilidade. A função window.subscribe deve ser fornecida pelo host."
+  }
+}

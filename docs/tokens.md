@@ -43,3 +43,7 @@ Para reduzir desperdício, delimite o escopo, evite que vários agentes releiam 
 - [OpenAI: subagentes, consumo e configuração](https://learn.chatgpt.com/docs/agent-configuration/subagents).
 - [Habblaud: fontes locais, integração e mensagens](https://github.com/marmottajr/habblaud/blob/main/README.pt-BR.md).
 - [Agency Agents: discussão sobre avaliação comparativa](https://github.com/msitarzewski/agency-agents/discussions/434).
+
+## Medição desta versão
+
+Na comparação controlada dos perfis antigos e ampliados, entrada + saída aumentaram 4.04%, com empate de pontuação. É uma amostra pequena, não uma promessa de consumo. [Método e números](avaliacao.md#consumo-observado).

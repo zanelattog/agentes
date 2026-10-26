@@ -1,0 +1,21 @@
+{
+  "role": "atlas",
+  "version": "baseline",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 16.25,
+  "usage": {
+    "input_tokens": 11613,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 382,
+    "reasoning_output_tokens": 37
+  },
+  "profile_sha256": "31a5530c857236f35d753a7da68f1278f9b9380660040fb99a303b9a6ce248ba",
+  "task_sha256": "74459d9b0719427d63dc16d6524c13d99a5850486549624cac82e0d6b3d1c2e5",
+  "response": {
+    "answer": "Persista o evento em uma inbox no PostgreSQL e responda HTTP somente após o commit durável, dentro de 2 segundos; se o commit falhar, não confirme. Use unicidade em (tenant_id, event_id), confirmando também duplicatas já persistidas. O worker existente deve reivindicar eventos atomicamente, com recuperação de reivindicações abandonadas, e processar fora do recebimento. Grave mudanças de negócio e o estado pendente da notificação na mesma transação. Envie a notificação com chave estável por tenant, evento e operação, reutilizada nas tentativas. Use backoff limitado, registro de falhas e reprocessamento; no rollback, preserve inbox e compatibilidade do esquema. Isso permite receber durante indisponibilidade do processamento, sem novos serviços. A entrega admite tentativas repetidas: evitar efeitos externos duplicados depende da garantia e do prazo de retenção da chave pela API externa.",
+    "artifact": "{\"ack_when\":\"after_durable_commit\",\"dedup_key\":\"tenant_and_event_id\",\"persistence\":\"database_inbox_transaction\",\"worker_claim\":\"atomic_claim_or_lock\",\"external_delivery\":\"stable_idempotency_key\",\"new_services\":\"none\",\"retry_policy\":\"bounded_backoff_with_failure_tracking\",\"rollback\":\"preserve_inbox_and_compatible_schema\"}",
+    "limitations": "Não foram inspecionados arquivos nem executados testes. Não foram validados latência de commit, configuração de durabilidade do PostgreSQL, capacidade da inbox, autenticação e identificação confiável do tenant ou contrato de idempotência externo. O recebimento depende da disponibilidade do PostgreSQL."
+  }
+}

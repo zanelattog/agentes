@@ -1,0 +1,21 @@
+{
+  "role": "nexo",
+  "version": "candidate",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 15.59,
+  "usage": {
+    "input_tokens": 11950,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 511,
+    "reasoning_output_tokens": 91
+  },
+  "profile_sha256": "75426f928444d4b5a93613e5e96bed630dcb2e2947c0ff6856c15f5a68ce34f8",
+  "task_sha256": "9bf76c027e651023b881636d6f89df9152430fb7c89605d7cd9aa5c15612d2e7",
+  "response": {
+    "answer": "Complexidade: O(n log n) operações e O(n) espaço, para n pesos; o custo da aritmética depende do tamanho dos inteiros. Usa apenas aritmética inteira e não itera por centavo.",
+    "artifact": "def allocate(total, weights):\n    if isinstance(total, bool) or not isinstance(total, int):\n        raise TypeError(\"total deve ser int, exceto bool\")\n    if not isinstance(weights, list):\n        raise TypeError(\"weights deve ser uma lista\")\n    for weight in weights:\n        if isinstance(weight, bool) or not isinstance(weight, int):\n            raise TypeError(\"cada peso deve ser int, exceto bool\")\n\n    if total < 0:\n        raise ValueError(\"total deve ser não negativo\")\n    if not weights:\n        raise ValueError(\"weights não pode ser vazia\")\n    if any(weight < 0 for weight in weights):\n        raise ValueError(\"pesos devem ser não negativos\")\n    weight_sum = sum(weights)\n    if weight_sum == 0:\n        raise ValueError(\"pelo menos um peso deve ser positivo\")\n\n    allocation = [0] * len(weights)\n    remainders = []\n    for index, weight in enumerate(weights):\n        if weight > 0:\n            quotient, remainder = divmod(total * weight, weight_sum)\n            allocation[index] = quotient\n            remainders.append((remainder, index))\n\n    remaining = total - sum(allocation)\n    remainders.sort(key=lambda item: (-item[0], item[1]))\n    for position in range(remaining):\n        allocation[remainders[position][1]] += 1\n\n    return allocation\n",
+    "limitations": "Validação apenas por análise do código; testes não foram executados."
+  }
+}

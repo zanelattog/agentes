@@ -1,0 +1,176 @@
+{
+  "atlas-baseline": {
+    "passed": 8,
+    "total": 8,
+    "checks": {
+      "ack_when": true,
+      "dedup_key": true,
+      "persistence": true,
+      "worker_claim": true,
+      "external_delivery": true,
+      "new_services": true,
+      "retry_policy": true,
+      "rollback": true
+    }
+  },
+  "iris-baseline": {
+    "passed": 6,
+    "total": 6,
+    "checks": {
+      "R1": true,
+      "R2": true,
+      "R3": true,
+      "R4": true,
+      "R5": true,
+      "R6": true
+    }
+  },
+  "cora-baseline": {
+    "passed": 6,
+    "total": 6,
+    "checks": {
+      "S1": true,
+      "S2": true,
+      "S3": true,
+      "S4": true,
+      "S5": true,
+      "S6": true
+    }
+  },
+  "nexo-baseline": {
+    "passed": 15,
+    "total": 15,
+    "checks": {
+      "ties": true,
+      "zero_total": true,
+      "zero_weights": true,
+      "proportion": true,
+      "large": true,
+      "invalid_0": true,
+      "invalid_1": true,
+      "invalid_2": true,
+      "invalid_3": true,
+      "invalid_4": true,
+      "invalid_5": true,
+      "invalid_6": true,
+      "invalid_7": true,
+      "invalid_8": true,
+      "100_seeded_exact_cases": true
+    }
+  },
+  "vero-baseline": {
+    "passed": 7,
+    "total": 7,
+    "checks": {
+      "gold": true,
+      "wrong_exponent": true,
+      "missing_cap": true,
+      "zero_base_wrong": true,
+      "accepts_negative": true,
+      "accepts_bool": true,
+      "zero_cap_wrong": true
+    }
+  },
+  "atlas-candidate": {
+    "passed": 8,
+    "total": 8,
+    "checks": {
+      "ack_when": true,
+      "dedup_key": true,
+      "persistence": true,
+      "worker_claim": true,
+      "external_delivery": true,
+      "new_services": true,
+      "retry_policy": true,
+      "rollback": true
+    }
+  },
+  "iris-candidate": {
+    "passed": 6,
+    "total": 6,
+    "checks": {
+      "R1": true,
+      "R2": true,
+      "R3": true,
+      "R4": true,
+      "R5": true,
+      "R6": true
+    }
+  },
+  "cora-candidate": {
+    "passed": 6,
+    "total": 6,
+    "checks": {
+      "S1": true,
+      "S2": true,
+      "S3": true,
+      "S4": true,
+      "S5": true,
+      "S6": true
+    }
+  },
+  "nexo-candidate": {
+    "passed": 15,
+    "total": 15,
+    "checks": {
+      "ties": true,
+      "zero_total": true,
+      "zero_weights": true,
+      "proportion": true,
+      "large": true,
+      "invalid_0": true,
+      "invalid_1": true,
+      "invalid_2": true,
+      "invalid_3": true,
+      "invalid_4": true,
+      "invalid_5": true,
+      "invalid_6": true,
+      "invalid_7": true,
+      "invalid_8": true,
+      "100_seeded_exact_cases": true
+    }
+  },
+  "vero-candidate": {
+    "passed": 7,
+    "total": 7,
+    "checks": {
+      "gold": true,
+      "wrong_exponent": true,
+      "missing_cap": true,
+      "zero_base_wrong": true,
+      "accepts_negative": true,
+      "accepts_bool": true,
+      "zero_cap_wrong": true
+    }
+  },
+  "luna-baseline": {
+    "passed": 9,
+    "total": 9,
+    "checks": {
+      "label": true,
+      "live_region": true,
+      "narrow_screen": true,
+      "keyboard_focus": true,
+      "invalid_not_sent": true,
+      "pending_deduplicates": true,
+      "failure_preserves_retry": true,
+      "success_reenables": true,
+      "no_navigation": true
+    }
+  },
+  "luna-candidate": {
+    "passed": 9,
+    "total": 9,
+    "checks": {
+      "label": true,
+      "live_region": true,
+      "narrow_screen": true,
+      "keyboard_focus": true,
+      "invalid_not_sent": true,
+      "pending_deduplicates": true,
+      "failure_preserves_retry": true,
+      "success_reenables": true,
+      "no_navigation": true
+    }
+  }
+}

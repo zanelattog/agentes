@@ -43,3 +43,7 @@ To limit wasted work, narrow each assignment, avoid duplicate full-project reads
 - [OpenAI: subagents, usage and configuration](https://learn.chatgpt.com/docs/agent-configuration/subagents).
 - [Habblaud: local sources, integration and messages](https://github.com/marmottajr/habblaud).
 - [Agency Agents: comparative evaluation discussion](https://github.com/msitarzewski/agency-agents/discussions/434).
+
+## Measurement for this version
+
+In the controlled old/expanded profile comparison, input + output increased 4.04%, with tied scores. This is a small sample, not a usage promise. [Method and numbers](evaluation.en.md#observed-usage).

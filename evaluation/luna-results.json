@@ -1,0 +1,24 @@
+{
+  "baseline": {
+    "label": true,
+    "live_region": true,
+    "narrow_screen": true,
+    "keyboard_focus": true,
+    "invalid_not_sent": true,
+    "pending_deduplicates": true,
+    "failure_preserves_retry": true,
+    "success_reenables": true,
+    "no_navigation": true
+  },
+  "candidate": {
+    "label": true,
+    "live_region": true,
+    "narrow_screen": true,
+    "keyboard_focus": true,
+    "invalid_not_sent": true,
+    "pending_deduplicates": true,
+    "failure_preserves_retry": true,
+    "success_reenables": true,
+    "no_navigation": true
+  }
+}

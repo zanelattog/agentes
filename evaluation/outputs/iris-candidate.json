@@ -1,0 +1,21 @@
+{
+  "role": "iris",
+  "version": "candidate",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 12.36,
+  "usage": {
+    "input_tokens": 12091,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 317,
+    "reasoning_output_tokens": 0
+  },
+  "profile_sha256": "3a9ea31e1a8b04593e240862ca27dbec5be009efa6bab13504db46dc1516c670",
+  "task_sha256": "4d0409f37d6ccff35375e4512bf263028f681f809b8265d59f8c8d49d0850bf1",
+  "response": {
+    "answer": "R1 confirmada: add_item(1) seguido de add_item(2), sem lista explícita, retorna a mesma lista, agora [1, 2], violando a independência exigida. Use uma nova lista por chamada quando omitida. R2 confirmada: average([]) divide zero por zero e lança ZeroDivisionError, em vez de retornar None; trate a entrada vazia. R3 rejeitada: user_id é passado como parâmetro ao placeholder ?, aceito pelo DB-API, sem interpolação no SQL. R4 confirmada: com saldo 100, cobranças de 10 e 20 podem ler ambas 100 e suspender em audit; ao retomarem, escrevem 90 e 80, perdendo um débito em vez de resultar em 70. Proteja a atualização compartilhada com sincronização ou débito atômico. R5 rejeitada: nome curto não demonstra defeito funcional. R6 rejeitada: sem a implementação de audit, não há evidência de exposição de credenciais.",
+    "artifact": "{\"R1\":true,\"R2\":true,\"R3\":false,\"R4\":true,\"R5\":false,\"R6\":false}",
+    "limitations": "Análise estática restrita ao trecho e ao contrato fornecidos. Nenhum teste executado ou arquivo alterado. A implementação de audit não foi fornecida; o cenário concorrente pressupõe que ela suspenda a execução."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "role": "nexo",
+  "version": "baseline",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 10.8,
+  "usage": {
+    "input_tokens": 11519,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 454,
+    "reasoning_output_tokens": 55
+  },
+  "profile_sha256": "b50afd87362dede90c05aa6d2ab9d5952300d9eebf422015b3c1e1b45b555aca",
+  "task_sha256": "9bf76c027e651023b881636d6f89df9152430fb7c89605d7cd9aa5c15612d2e7",
+  "response": {
+    "answer": "Complexidade: O(n log n) operações e O(n) espaço, sem iterar por centavo. Usa apenas aritmética inteira exata; o custo das operações depende do tamanho dos inteiros.",
+    "artifact": "def allocate(total, weights):\n    if isinstance(total, bool) or not isinstance(total, int):\n        raise TypeError(\"total deve ser int\")\n    if not isinstance(weights, list):\n        raise TypeError(\"weights deve ser uma lista\")\n    for weight in weights:\n        if isinstance(weight, bool) or not isinstance(weight, int):\n            raise TypeError(\"cada peso deve ser int\")\n\n    if total < 0:\n        raise ValueError(\"total deve ser não negativo\")\n    if not weights:\n        raise ValueError(\"weights não pode ser vazia\")\n    if any(weight < 0 for weight in weights):\n        raise ValueError(\"pesos devem ser não negativos\")\n    weight_sum = sum(weights)\n    if weight_sum == 0:\n        raise ValueError(\"deve haver pelo menos um peso positivo\")\n\n    allocated = []\n    remainders = []\n    for index, weight in enumerate(weights):\n        quotient, remainder = divmod(total * weight, weight_sum)\n        allocated.append(quotient)\n        if remainder > 0:\n            remainders.append((remainder, index))\n\n    remaining = total - sum(allocated)\n    remainders.sort(key=lambda item: (-item[0], item[1]))\n    for position in range(remaining):\n        allocated[remainders[position][1]] += 1\n\n    return allocated\n",
+    "limitations": "Código não validado por execução de testes."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "role": "atlas",
+  "version": "candidate",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 21.55,
+  "usage": {
+    "input_tokens": 12066,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 391,
+    "reasoning_output_tokens": 0
+  },
+  "profile_sha256": "b5bc8548aad68590ad98ffb00cea1042b56415e318f0948d3680e183a938e051",
+  "task_sha256": "74459d9b0719427d63dc16d6524c13d99a5850486549624cac82e0d6b3d1c2e5",
+  "response": {
+    "answer": "O plano mantém monólito, PostgreSQL e worker existentes. O endpoint valida a origem e o tenant e confirma HTTP em até 2 segundos somente após commit durável na inbox, sem depender do processamento de negócio. Uma restrição única em (tenant_id, event_id) deduplica eventos; duplicatas já persistidas recebem sucesso. Workers usam claim atômico com lease recuperável após crash e proteção contra conclusão por um claim expirado. Alterações de negócio e registro da notificação pendente devem ser transacionais. A chamada externa usa chave estável por tenant, evento e efeito; falhas têm backoff limitado, registro persistente e reprocessamento. O rollback preserva inbox e compatibilidade de esquema. Critérios de aceitação: evento recuperável após crash depois do HTTP, isolamento entre tenants, concorrência sem efeitos duplicados e recebimento independente do negócio. A entrega envolve novas tentativas: evitar duplicação externa depende da retenção e das garantias de idempotência da API; não há garantia incondicional de exatamente uma vez.",
+    "artifact": "{\"ack_when\":\"after_durable_commit\",\"dedup_key\":\"tenant_and_event_id\",\"persistence\":\"database_inbox_transaction\",\"worker_claim\":\"atomic_claim_or_lock\",\"external_delivery\":\"stable_idempotency_key\",\"new_services\":\"none\",\"retry_policy\":\"bounded_backoff_with_failure_tracking\",\"rollback\":\"preserve_inbox_and_compatible_schema\"}",
+    "limitations": "Não foram executados testes nem inspecionados arquivos. Não foram validados latência de commit, configuração de durabilidade do PostgreSQL, capacidade de armazenamento, autenticação do provedor nem prazo de retenção da idempotência externa. Aceitar eventos durante falhas do negócio depende da disponibilidade e capacidade do banco; sem commit em tempo hábil, deve-se responder erro e depender da reentrega do provedor."
+  }
+}

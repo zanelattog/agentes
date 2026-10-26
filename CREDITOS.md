@@ -13,9 +13,9 @@ This selection and adaptation was prepared by Gabriel (@zanelattog), with Codex 
 
 ## O que mudou / What changed
 
-Seis papéis selecionados, instruções resumidas em português, orientações para responder no idioma solicitado, exemplos de uso, documentação bilíngue, instalador local e testes de preservação de arquivos.
+Seis papéis selecionados, instruções e procedimentos específicos em português, orientações para responder no idioma solicitado, exemplos de uso, documentação bilíngue, instalador local e testes de preservação de arquivos.
 
-Six selected roles, condensed Portuguese instructions, guidance to respond in the requested language, usage examples, bilingual documentation, a local installer and file-preservation tests.
+Six selected roles, role-specific Portuguese instructions and procedures, guidance to respond in the requested language, usage examples, bilingual documentation, a local installer and file-preservation tests.
 
 Foram removidas biografias fictícias, metas de desempenho sem medição e comandos específicos de stacks que podem não existir no projeto do usuário. A validação foi reformulada para não aprovar ou reprovar automaticamente. Não há promessa de superioridade ou economia de tokens.
 
