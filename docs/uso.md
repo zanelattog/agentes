@@ -16,10 +16,14 @@ Pedir agentes não exige abrir seis conversas manualmente. O Codex coordena a de
 
 > Quando eu pedir algo simples, resolva direto. Para tarefas maiores, explique se vale a pena dividir o trabalho, sugira somente os especialistas necessários e me pergunte antes de chamá-los. Não use todos por padrão.
 
-Você pode usar esse combinado uma vez no início do chat. Para persistir entre chats, ele precisa ser salvo nas instruções adequadas do projeto ou do cliente. Este pacote não altera essas instruções automaticamente.
+Você pode usar esse combinado uma vez no início do chat. Para persistir entre chats, ele precisa ser salvo nas instruções adequadas do projeto ou do cliente. O instalador básico não altera essas instruções; o instalador Maestro configura a coordenação explicitamente.
 
-Os nomes exatos são `atlas`, `luna`, `nexo`, `iris`, `cora` e `vero`. Se o Codex disser que não encontra um perfil, abra uma nova conversa e confira a instalação. Não peça que ele finja ter chamado um agente indisponível.
+Os nomes exatos são `atlas`, `luna`, `nexo`, `iris`, `cora`, `vero`, `pixel`, `frame`, `nilo`, `maia` e `otto`. Se o Codex disser que não encontra um perfil, abra uma nova conversa e confira a instalação. Não peça que ele finja ter chamado um agente indisponível.
 
 No Habblaud, personagens representam sessões reais. Eles não ficam todos na sala só porque os arquivos foram instalados; aparecem conforme a atividade e a integração disponível.
 
 [Documentação oficial sobre delegação](https://learn.chatgpt.com/docs/agent-configuration/subagents).
+
+## Maestro no principal
+
+Com o modo [Maestro](maestro.md) instalado, o principal já coordena. Descreva o objetivo; não peça para criar outro Maestro. Para tarefas pequenas ele trabalha sozinho, e pode delegar seletivamente quando necessário e permitido. Você pode pedir que trabalhe sozinho ou consulte antes de delegar.

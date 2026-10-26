@@ -84,5 +84,10 @@
       "docs/07-harness-evaluation.md"
     ],
     "scope": "Verification, continuity and handoff instructions; no bundled plugins or stack migration."
+  },
+  "main_coordinator": {
+    "file": "coordinator/maestro.md",
+    "origin": "Prepared for this selection with Codex assistance; workflow practices attributed in CREDITOS.md.",
+    "runtime_reference": "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
   }
 }

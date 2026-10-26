@@ -2,6 +2,8 @@
 
 [Português](instalacao.md) · [Back](../README.en.md)
 
+To configure Maestro on the main agent too, open **Instalar Maestro.command**. Requires Python 3.9+ and adds a managed block to your personal AGENTS.md, preserving unrelated content. [Details](maestro.en.md).
+
 ### This selection: Intel or Apple Silicon Mac
 
 1. Click [**Download the agents**](https://github.com/zanelattog/agentes/archive/refs/heads/main.zip), or **Code → Download ZIP** on GitHub.

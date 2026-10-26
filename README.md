@@ -6,6 +6,18 @@ Onze agentes para desenvolver, criar conteúdo, prospectar e organizar entregas.
 
 **[↓ Baixar os agentes](https://github.com/zanelattog/agentes/archive/refs/heads/main.zip)** · [Instalação](docs/instalacao.md) · [Tokens](docs/tokens.md)
 
+## Maestro: o principal coordena
+
+Você descreve o objetivo; o próprio Codex trabalha como **Maestro**. Resolve tarefas simples sozinho e delega etapas aos especialistas quando necessário. **Não cria um segundo coordenador.**
+
+```text
+Você → Maestro (Codex principal) → especialistas necessários → resultado verificado
+```
+
+No ZIP, abra **Instalar Maestro.command** para configurar o principal e instalar os onze especialistas. Requer Python 3.9+. O instalador preserva suas instruções e não altera modelo ou aprovações. Depois, abra um novo chat e descreva o que quer fazer.
+
+[Como usar e remover](docs/maestro.md) · [O que foi testado](docs/validacao-maestro.md) · [Roteiro de demonstração ESP](docs/apresentacao-esp.md)
+
 ## Conheça a equipe
 
 | Agente | Em que ajuda |

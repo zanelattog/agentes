@@ -36,3 +36,9 @@ The applications are not bundled. The Habblaud screenshot was edited with Imageg
 Práticas de verificação, continuidade e handoff adaptadas do **Vibe Coding Toolkit, de Matheus Gomes**, revisão `790a895304e0c08b70a5b215c9d334f1c86b816c`. [Origem](https://github.com/soumatheusgomes/vibe-coding-toolkit/tree/790a895304e0c08b70a5b215c9d334f1c86b816c) · [Licença MIT preservada](licenses/VIBE-CODING-TOOLKIT-MIT.txt).
 
 Verification, continuity and handoff practices adapted from Matheus Gomes's Vibe Coding Toolkit at the revision above. Source attribution for each profile is recorded in `sources.json`. External plugins referenced by the toolkit are not bundled or installed.
+
+## Maestro
+
+As instruções de coordenação do principal e seu instalador foram preparados para esta seleção por Gabriel, com apoio do Codex. Mantêm as práticas de verificação e continuidade creditadas acima. Maestro não é um perfil copiado do catálogo Agency Agents nem um modelo novo.
+
+Main-agent coordination instructions and their installer were prepared for this selection by Gabriel with Codex assistance, retaining the verification and continuity practices credited above. Maestro is not a copied Agency Agents role or a new model.

@@ -6,6 +6,18 @@ Eleven agents for development, content, prospecting and delivery coordination. I
 
 **[↓ Download the agents](https://github.com/zanelattog/agentes/archive/refs/heads/main.zip)** · [Installation](docs/installation.en.md) · [Token usage](docs/tokens.en.md)
 
+## Maestro: the main agent coordinates
+
+Describe the goal; Codex itself works as **Maestro**. It handles simple tasks directly and delegates bounded work when needed. **It does not create a second coordinator.**
+
+```text
+You → Maestro (main Codex agent) → necessary specialists → verified result
+```
+
+In the ZIP, open **Instalar Maestro.command** to configure the main agent and install the eleven specialists. Requires Python 3.9+. Existing instructions are preserved; models and approvals are unchanged. Start a new chat afterward and describe your goal.
+
+[Usage and removal](docs/maestro.en.md) · [Validation](docs/validacao-maestro.md)
+
 ## Meet the team
 
 | Agent | How it helps |

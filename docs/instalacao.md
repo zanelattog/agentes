@@ -2,6 +2,8 @@
 
 [English](installation.en.md) · [Voltar](../README.md)
 
+Para instalar também o Maestro como comportamento do agente principal, abra **Instalar Maestro.command**. Requer Python 3.9+ e acrescenta instruções identificadas ao AGENTS.md pessoal, preservando o restante. [Detalhes](maestro.md).
+
 ### Esta seleção: Mac Intel ou Apple Silicon
 
 1. Clique em [**Baixar os agentes**](https://github.com/zanelattog/agentes/archive/refs/heads/main.zip). Também pode usar **Code → Download ZIP** no GitHub.
