@@ -21,6 +21,22 @@ Seis agentes, cada um com uma função. Organizei esta seleção para planejar, 
 
 <sub>Montagem sobre uma captura oficial do <a href="https://github.com/marmottajr/habblaud">Habblaud, de Márcio Junior</a>. Nomes e funções foram editados para apresentar esta equipe. Não é uma captura de agentes nossos em execução. <a href="docs/imagens.md">Origem e edição</a>.</sub>
 
+## Como chamar os agentes
+
+**Não precisa decorar os nomes nem chamar todos a cada pedido.** Você pode escolher um especialista ou pedir ao Codex para escolher:
+
+| Você quer… | Pode escrever… |
+| --- | --- |
+| Deixar o Codex escolher | “Use os agentes necessários para esta tarefa e explique como dividiu o trabalho.” |
+| Revisar uma alteração | “Peça à Iris para revisar este código, sem alterar os arquivos.” |
+| Construir e conferir uma tela | “Peça à Luna para implementar a tela e, depois, ao Vero para testar.” |
+
+Se preferir decidir antes de gastar com outros agentes, combine no início do chat:
+
+> Se a tarefa for simples, resolva direto. Se valer a pena usar especialistas, sugira quais e me pergunte antes de chamar.
+
+Esse combinado vale para a conversa; em um novo chat, repita-o ou salve nas instruções do projeto. Instalar os perfis só os disponibiliza: não inicia os seis automaticamente. [Mais exemplos](docs/uso.md).
+
 ## Comece em poucos passos
 
 1. Clique em **Baixar os agentes** e extraia o ZIP.

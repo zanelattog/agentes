@@ -21,6 +21,22 @@ Six agents, each with a clear job. I put this selection together to plan, build 
 
 <sub>Edited from an official screenshot of <a href="https://github.com/marmottajr/habblaud">Habblaud by Márcio Junior</a>. Names and roles were changed to present this team. This is not a capture of our agents running. The application labels in this image are in Portuguese. <a href="docs/imagens.md">Source and editing details</a>.</sub>
 
+## How to call the agents
+
+**You do not need to memorize names or call everyone for each request.** Choose a specialist or ask Codex to choose:
+
+| You want… | You can say… |
+| --- | --- |
+| Codex to choose | “Use the agents needed for this task and explain how you divided the work.” |
+| A code review | “Ask Iris to review this code without editing files.” |
+| A screen built and checked | “Ask Luna to implement the screen, then ask Vero to test it.” |
+
+If you prefer deciding before using additional agents, start the chat with:
+
+> Handle simple tasks directly. When specialists would help, suggest which ones and ask me before calling them.
+
+This instruction applies to the conversation; repeat it in a new chat or save it in project instructions. Installing profiles makes them available; it does not automatically run all six. [More examples](docs/usage.en.md).
+
 ## Get started
 
 1. Click **Download the agents** and extract the ZIP.
