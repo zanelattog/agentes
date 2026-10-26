@@ -38,6 +38,51 @@
       "source_path": "testing/testing-reality-checker.md",
       "source_url": "https://github.com/msitarzewski/agency-agents/blob/b37b5bb33b78f2c1d6567d98e25ca818e3259219/testing/testing-reality-checker.md",
       "adaptation": "Condensed Portuguese adaptation; not a verbatim translation."
+    },
+    {
+      "file": "agents/pixel.toml",
+      "source_path": "design/design-image-prompt-engineer.md",
+      "source_url": "https://github.com/msitarzewski/agency-agents/blob/b37b5bb33b78f2c1d6567d98e25ca818e3259219/design/design-image-prompt-engineer.md",
+      "revision": "b37b5bb33b78f2c1d6567d98e25ca818e3259219",
+      "adaptation": "Portuguese role-specific adaptation; excludes unsupported outcome guarantees."
+    },
+    {
+      "file": "agents/frame.toml",
+      "source_path": "marketing/marketing-short-video-editing-coach.md",
+      "source_url": "https://github.com/msitarzewski/agency-agents/blob/b37b5bb33b78f2c1d6567d98e25ca818e3259219/marketing/marketing-short-video-editing-coach.md",
+      "revision": "b37b5bb33b78f2c1d6567d98e25ca818e3259219",
+      "adaptation": "Portuguese role-specific adaptation; excludes unsupported outcome guarantees."
+    },
+    {
+      "file": "agents/nilo.toml",
+      "source_path": "sales/sales-outbound-strategist.md",
+      "source_url": "https://github.com/msitarzewski/agency-agents/blob/b37b5bb33b78f2c1d6567d98e25ca818e3259219/sales/sales-outbound-strategist.md",
+      "revision": "b37b5bb33b78f2c1d6567d98e25ca818e3259219",
+      "adaptation": "Portuguese role-specific adaptation; excludes unsupported outcome guarantees."
+    },
+    {
+      "file": "agents/maia.toml",
+      "source_path": "marketing/marketing-content-creator.md",
+      "source_url": "https://github.com/msitarzewski/agency-agents/blob/b37b5bb33b78f2c1d6567d98e25ca818e3259219/marketing/marketing-content-creator.md",
+      "revision": "b37b5bb33b78f2c1d6567d98e25ca818e3259219",
+      "adaptation": "Portuguese role-specific adaptation; excludes unsupported outcome guarantees."
+    },
+    {
+      "file": "agents/otto.toml",
+      "source_path": "project-management/project-management-project-shepherd.md",
+      "source_url": "https://github.com/msitarzewski/agency-agents/blob/b37b5bb33b78f2c1d6567d98e25ca818e3259219/project-management/project-management-project-shepherd.md",
+      "revision": "b37b5bb33b78f2c1d6567d98e25ca818e3259219",
+      "adaptation": "Portuguese role-specific adaptation; excludes unsupported outcome guarantees."
     }
-  ]
+  ],
+  "workflow_source": {
+    "repository": "https://github.com/soumatheusgomes/vibe-coding-toolkit",
+    "revision": "790a895304e0c08b70a5b215c9d334f1c86b816c",
+    "files": [
+      "templates/AGENTS.md.template",
+      "templates/task-handoff.md.template",
+      "docs/07-harness-evaluation.md"
+    ],
+    "scope": "Verification, continuity and handoff instructions; no bundled plugins or stack migration."
+  }
 }

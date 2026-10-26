@@ -13,7 +13,7 @@
 
 O botão baixa os arquivos; a instalação acontece ao abrir o instalador no computador. O macOS pode pedir confirmação para abrir um arquivo baixado. Não é um aplicativo assinado. Se não abrir com dois cliques, abra o Terminal, digite `bash `, arraste `Instalar.command` para a janela e pressione Enter.
 
-O instalador usa o Bash do macOS, sem bibliotecas adicionais. Copia somente os seis perfis para `~/.codex/agents` (ou `$CODEX_HOME/agents`, quando configurado). Não chama modelos, não instala o Codex ou o Habblaud e não altera permissões, modelos ou `config.toml`. Arquivos existentes diferentes são preservados e interrompem a instalação.
+O instalador usa o Bash do macOS, sem bibliotecas adicionais. Copia somente os onze perfis para `~/.codex/agents` (ou `$CODEX_HOME/agents`, quando configurado). Não chama modelos, não instala o Codex ou o Habblaud e não altera permissões, modelos ou `config.toml`. Versões anteriores conhecidas, identificadas por SHA-256, são atualizadas com backup em `~/.codex/agents/.agentes-backups/`. Arquivos com edições pessoais ou origem desconhecida interrompem a instalação antes de alterar qualquer perfil.
 
 Precisa de uma versão do Codex com suporte a agentes personalizados e uma conta configurada. Se o perfil não aparecer, reinicie o aplicativo e confira se agentes estão habilitados na sua configuração. [Referência oficial](https://learn.chatgpt.com/docs/agent-configuration/subagents).
 
@@ -33,9 +33,9 @@ bash scripts/install.sh --dest "/caminho/do/projeto/.codex/agents"
 bash scripts/install.sh --uninstall
 ```
 
-Para remover de um projeto, use também `--dest` com o mesmo destino. A remoção para se encontrar um perfil modificado, preservando seus ajustes. Atualizações com conteúdo diferente também exigem que você revise e guarde a versão anterior antes de substituí-la.
+Para remover de um projeto, use também `--dest` com o mesmo destino. A remoção para se encontrar um perfil modificado, preservando seus ajustes. Para atualizar, baixe novamente o ZIP do repositório e execute o instalador novo. Ele instala a versão contida nesse download; não busca atualizações em segundo plano, nem sincroniza automaticamente com os projetos originais. O backup preserva o conteúdo anterior; confira os arquivos antes de restaurá-los.
 
-No Linux, use `bash scripts/install.sh`. No Windows, copie os seis arquivos de `agents/` para a pasta de agentes da instalação do Codex que você usa; o instalador de dois cliques deste pacote é para macOS.
+No Linux, use `bash scripts/install.sh`. No Windows, copie os onze arquivos de `agents/` para a pasta de agentes da instalação do Codex que você usa; o instalador de dois cliques deste pacote é para macOS.
 
 </details>
 
@@ -50,4 +50,4 @@ No Linux, use `bash scripts/install.sh`. No Windows, copie os seis arquivos de `
 5. Abra a ação de instalação/deploy da seleção e escolha **Codex** como ferramenta de destino.
 6. Confira o resultado e inicie uma nova conversa no Codex. Consulte o **Playbook** do aplicativo para exemplos de uso.
 
-Os nomes dos controles podem mudar entre versões. Esse caminho instala perfis do **catálogo original**, não as seis adaptações deste repositório. A instalação disponibiliza instruções; a execução acontece no Codex. [Documentação do aplicativo](https://github.com/msitarzewski/agency-agents-app).
+Os nomes dos controles podem mudar entre versões. Esse caminho instala perfis do **catálogo original**, não as onze adaptações deste repositório. A instalação disponibiliza instruções; a execução acontece no Codex. [Documentação do aplicativo](https://github.com/msitarzewski/agency-agents-app).

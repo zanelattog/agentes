@@ -33,7 +33,7 @@ class InstallerTests(unittest.TestCase):
 
     def test_install_is_exact_and_idempotent(self):
         self.run_installer()
-        self.assertEqual(len(list(self.dest.glob("*.toml"))), 6)
+        self.assertEqual(len(list(self.dest.glob("*.toml"))), len(PROFILES))
         stamps = {}
         for source in PROFILES:
             target = self.dest / source.name
@@ -72,7 +72,7 @@ class InstallerTests(unittest.TestCase):
         modified = self.dest / PROFILES[-1].name
         modified.write_text("my changes")
         self.run_installer("--uninstall", ok=False)
-        self.assertEqual(len(list(self.dest.glob("*.toml"))), 6)
+        self.assertEqual(len(list(self.dest.glob("*.toml"))), len(PROFILES))
         self.assertEqual(modified.read_text(), "my changes")
 
     def test_codex_home_override(self):
@@ -81,7 +81,32 @@ class InstallerTests(unittest.TestCase):
         result = subprocess.run(["/bin/bash", str(INSTALLER)], env=env,
                                 text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertEqual(len(list((isolated / "agents").glob("*.toml"))), 6)
+        self.assertEqual(len(list((isolated / "agents").glob("*.toml"))), len(PROFILES))
+
+    def test_known_versions_upgrade_with_backup(self):
+        self.dest.mkdir(parents=True)
+        old = ROOT / "evaluation" / "baseline" / "atlas.toml"
+        target = self.dest / "atlas.toml"
+        target.write_bytes(old.read_bytes())
+        self.run_installer("--dry-run")
+        self.assertEqual(target.read_bytes(), old.read_bytes())
+        self.assertFalse((self.dest / ".agentes-backups").exists())
+        self.run_installer()
+        self.assertEqual(target.read_bytes(), (ROOT / "agents" / "atlas.toml").read_bytes())
+        backups = list((self.dest / ".agentes-backups").glob("*/atlas.toml"))
+        self.assertEqual(len(backups), 1)
+        self.assertEqual(backups[0].read_bytes(), old.read_bytes())
+        self.assertEqual(len(list(self.dest.glob("*.toml"))), len(PROFILES))
+
+    def test_known_update_does_not_bypass_other_conflict(self):
+        self.dest.mkdir(parents=True)
+        old = (ROOT / "evaluation" / "baseline" / "atlas.toml").read_bytes()
+        (self.dest / "atlas.toml").write_bytes(old)
+        (self.dest / "pixel.toml").write_text("my own agent")
+        self.run_installer(ok=False)
+        self.assertEqual((self.dest / "atlas.toml").read_bytes(), old)
+        self.assertFalse((self.dest / ".agentes-backups").exists())
+        self.assertEqual(len(list(self.dest.glob("*.toml"))), 2)
 
     def test_missing_destination_is_rejected(self):
         self.run_installer("--dest", ok=False)

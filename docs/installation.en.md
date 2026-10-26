@@ -13,7 +13,7 @@
 
 The button downloads files; installation happens on your computer when you open the installer. macOS may require confirmation for a downloaded file. This is not a signed application. If double-clicking does not work, open Terminal, type `bash `, drag `Instalar.command` into the window and press Enter.
 
-The installer uses macOS Bash with no additional libraries. It copies only the six profiles to `~/.codex/agents` (or `$CODEX_HOME/agents` if configured). It makes no model calls, installs neither Codex nor Habblaud, and does not modify permissions, model settings or `config.toml`. Conflicting files are preserved and installation stops.
+The installer uses macOS Bash with no additional libraries. It copies only the eleven profiles to `~/.codex/agents` (or `$CODEX_HOME/agents` if configured). It makes no model calls, installs neither Codex nor Habblaud, and does not modify permissions, model settings or `config.toml`. Known previous versions are identified by SHA-256 and upgraded with backups under `~/.codex/agents/.agentes-backups/`. Personal edits or unknown files stop installation before any profile changes.
 
 You need a configured Codex account and a client supporting custom agents. If profiles are unavailable, restart the app and check whether agents are enabled in your configuration. [Official reference](https://learn.chatgpt.com/docs/agent-configuration/subagents).
 
@@ -33,9 +33,9 @@ bash scripts/install.sh --dest "/path/to/project/.codex/agents"
 bash scripts/install.sh --uninstall
 ```
 
-For project removal, also pass the same `--dest`. Removal stops if it encounters a modified profile, preserving your changes. Updates with different content also require reviewing and saving the previous version before replacing it.
+For project removal, also pass the same `--dest`. Removal stops if it encounters a modified profile, preserving your changes. Known older package versions are updated with backups; personal changes require reconciliation.
 
-On Linux, run `bash scripts/install.sh`. On Windows, copy the six files from `agents/` into the agents folder of the Codex installation you use; this package's double-click installer targets macOS.
+On Linux, run `bash scripts/install.sh`. On Windows, copy the eleven files from `agents/` into the agents folder of the Codex installation you use; this package's double-click installer targets macOS.
 
 </details>
 
@@ -50,4 +50,8 @@ On Linux, run `bash scripts/install.sh`. On Windows, copy the six files from `ag
 5. Open the selection's install/deploy action and select **Codex** as the destination tool.
 6. Check the results and start a new Codex chat. The app's **Playbook** includes usage examples.
 
-Control labels may change between versions. This route installs the **original catalog**, not this repository's six adapted profiles. Installation makes instructions available; execution happens in Codex. [Application documentation](https://github.com/msitarzewski/agency-agents-app).
+Control labels may change between versions. This route installs the **original catalog**, not this repository's eleven adapted profiles. Installation makes instructions available; execution happens in Codex. [Application documentation](https://github.com/msitarzewski/agency-agents-app).
+
+## Updating
+
+Download a fresh ZIP and run its installer. It installs the version bundled in that download, not a background update service or automatic upstream synchronization. Known unmodified older profiles receive backups; personal edits require reconciliation.

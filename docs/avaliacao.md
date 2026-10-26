@@ -1,5 +1,7 @@
 # O que foi testado
 
+> **Registro histórico:** esta comparação usa os seis perfis anteriores ao toolkit. Os hashes em `evaluation/outputs/` identificam as versões testadas. Não extrapole os resultados para a versão 2.0. [Verificação atual](validacao-v2.md).
+
 [English](evaluation.en.md) · [Voltar](../README.md)
 
 ## Resultado: empate, não uma melhora comprovada

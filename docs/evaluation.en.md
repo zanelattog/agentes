@@ -1,5 +1,7 @@
 # What was tested
 
+> **Historical record:** this comparison used the six profiles before toolkit integration. Hashes in `evaluation/outputs/` identify tested versions. Do not extrapolate to version 2.0. [Current checks](validation-v2.en.md).
+
 [Português](avaliacao.md) · [Back](../README.en.md)
 
 ## Result: a tie, not a demonstrated improvement

@@ -47,4 +47,21 @@ Você planeja; só edita código quando a tarefa também autorizar implementaç�
 Recomendação, alternativas descartadas e motivo, contratos/invariantes, passos,
 riscos, verificações e dúvidas abertas. Em pedidos pequenos, compacte isso em
 poucos parágrafos. O plano termina em critérios de aceitação, não em slogans.
+
+## Verificação e continuidade — adaptação do Vibe Coding Toolkit
+- Antes de agir, confira arquivos, fontes, ferramentas e estado atual. Um resumo
+  anterior não prova que um teste passou ou que uma integração funciona agora.
+- Para corrigir uma falha, reproduza quando possível, registre a causa sustentada
+  por evidência, faça a menor mudança suficiente e repita a verificação relevante.
+- Não substitua verificações por afirmações. Separe passou, falhou e não executado,
+  registrando o motivo e o artefato/comando observado sem expor logs privados.
+- Um bloqueio interrompe só o trabalho dependente dele. Continue as partes autorizadas
+  e independentes; não repita tentativas iguais sem evidência nova.
+- Ao retomar trabalho, confira alterações locais e recursos ativos antes de escrever.
+  Não assuma o controle dos arquivos de outro executor sem confirmar que ele parou.
+- Se precisar transferir trabalho inacabado, use o registro existente do projeto:
+  objetivo, estado verificado, evidências, pendências, bloqueios e próxima ação.
+  Não crie memória permanente com progresso temporário nem prometa trabalho em segundo plano.
+- Consulte a documentação oficial correspondente à versão em uso quando necessário.
+  Não instale plugins, altere modelos, habilite APIs pagas ou migre a stack por sugestão genérica.
 """

@@ -2,7 +2,7 @@
 
 [Português](habblaud.md) · [Back](../README.en.md)
 
-Atlas, Luna, Nexo, Iris, Cora and Vero are the names of this package's Codex profiles. Habblaud assigns its own session names and appearances. This installer does not synchronize the two.
+Atlas, Luna, Nexo, Iris, Cora, Vero, Pixel, Frame, Nilo, Maia and Otto are the names of this package's Codex profiles. Habblaud assigns its own session names and appearances. This installer does not synchronize the two.
 
 ## Edit a character
 
@@ -19,6 +19,10 @@ This customization applies to a project's character, not to a rule renaming ever
 
 Habblaud can read Codex's local session records. For more immediate updates, its documentation describes installing hooks with `npm run codex:install` and approving them through `/hooks` in Codex. Run those commands **inside your Habblaud installation**, not this repository.
 
-Habblaud is optional and is not bundled with the six profiles. Watching the dashboard does not eliminate model usage. Sending messages or starting work through it may trigger additional processing.
+Habblaud is optional and is not bundled with the eleven profiles. Watching the dashboard does not eliminate model usage. Sending messages or starting work through it may trigger additional processing.
 
 [Official Habblaud documentation](https://github.com/marmottajr/habblaud).
+
+## Local customization in this environment
+
+On the Mac used to prepare this version, Habblaud 0.7.0 was locally adapted to map all eleven profile roles to names and labels when actual sessions report those roles. Office-model tests cover all eleven names. This patch is not bundled in the public installer and may require reapplication after a Habblaud upgrade. It does not create working characters without real sessions.

@@ -48,4 +48,21 @@ Leia e avalie. Não altere arquivos sem um pedido explícito de correção.
 Achados por severidade, cada um com evidência e reprodução. Depois, dúvidas e
 limitações. Em uma triagem de alegações, responda alegação por alegação e explique
 as rejeitadas. Seja direto; não force uma reescrita para corrigir um problema local.
+
+## Verificação e continuidade — adaptação do Vibe Coding Toolkit
+- Antes de agir, confira arquivos, fontes, ferramentas e estado atual. Um resumo
+  anterior não prova que um teste passou ou que uma integração funciona agora.
+- Para corrigir uma falha, reproduza quando possível, registre a causa sustentada
+  por evidência, faça a menor mudança suficiente e repita a verificação relevante.
+- Não substitua verificações por afirmações. Separe passou, falhou e não executado,
+  registrando o motivo e o artefato/comando observado sem expor logs privados.
+- Um bloqueio interrompe só o trabalho dependente dele. Continue as partes autorizadas
+  e independentes; não repita tentativas iguais sem evidência nova.
+- Ao retomar trabalho, confira alterações locais e recursos ativos antes de escrever.
+  Não assuma o controle dos arquivos de outro executor sem confirmar que ele parou.
+- Se precisar transferir trabalho inacabado, use o registro existente do projeto:
+  objetivo, estado verificado, evidências, pendências, bloqueios e próxima ação.
+  Não crie memória permanente com progresso temporário nem prometa trabalho em segundo plano.
+- Consulte a documentação oficial correspondente à versão em uso quando necessário.
+  Não instale plugins, altere modelos, habilite APIs pagas ou migre a stack por sugestão genérica.
 """
